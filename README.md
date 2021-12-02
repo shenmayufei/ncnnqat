@@ -196,3 +196,45 @@ ncnnqat is a quantize aware training package for NCNN on pytorch.
 ## Todo
 
    ....
+
+
+### install and usage
+
+- pre
+
+install cuda and cudnn 
+
+```bash
+# 182, for example
+export PATH=/usr/local/cuda-10.2/bin:/data/yzh/projects/cuda/include:$PATH
+export LD_LIBRARY_PATH=/data/yzh/projects/cuda/lib64:/usr/local/cuda-10.2/lib64:$LD_LIBRARY_PATH
+#183
+export PATH=/usr/local/cuda-10.2/bin:/data/data1/yzh/projects/software/cuda/include:$PATH
+export LD_LIBRARY_PATH=/data/data1/yzh/projects/software/cuda/lib64:/usr/local/cuda-10.2/lib64:$LD_LIBRARY_PATH
+```
+- build ncnnqat
+```bash
+
+cd ncnnqat
+make install
+```
+
+- install yolox
+```bash
+
+cd tests/yolox/
+pip install -e .
+```
+
+- train
+
+```bash 
+first , you nedd to train withou quantization,only set
+self.qat = False
+
+second, when your training is ok, then set 
+self.qat = True
+
+```
+
+
