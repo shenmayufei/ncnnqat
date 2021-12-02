@@ -221,8 +221,9 @@ make install
 
 - install yolox
 ```bash
-
-cd tests/yolox/
+cd tests
+git clone https://github.com/shenmayufei/YOLOX/tree/qat
+cd yolox/
 pip install -e .
 ```
 
